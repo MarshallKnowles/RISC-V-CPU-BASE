@@ -1,0 +1,53 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/knowl/Documents/Personal_Projects/RISCVProcessor/dec5to32
+vdec5to32
+Z1 !s110 1692304482
+!i10b 1
+!s100 0J11W`a98TEhLMND45A371
+Iz:d@h7KDSa=6YakZB[T_V2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1692303742
+8dec5to32.v
+Fdec5to32.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1692304482.000000
+!s107 dec5to32.v|
+!s90 -reportprogress|300|dec5to32.v|
+!i113 1
+Z5 tCvgOpt 0
+vdec5to32_tb
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R1
+!i10b 1
+!s100 n6BFDEeKaARV48YHI:ZJz2
+I<V2k<55YNQ>S?J[fmSloH2
+R2
+!s105 dec5to32_tb_sv_unit
+S1
+R0
+w1692304479
+8dec5to32_tb.sv
+Fdec5to32_tb.sv
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 dec5to32_tb.sv|
+!s90 -reportprogress|300|dec5to32_tb.sv|
+!i113 1
+R5
