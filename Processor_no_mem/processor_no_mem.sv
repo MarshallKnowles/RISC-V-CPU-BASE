@@ -30,7 +30,7 @@ module processor_no_mem(
     regn x0(.din(dIn), .clk(clk), .reset(reset), .enable(gpr_enable[0]), .dout(mux_dIn[0]));
 
     //PC
-    logic PC_enable;
+    reg PC_enable;
     reg [31:0] PC_dOut;
     reg PC_increment;
     always @(posedge clk)
