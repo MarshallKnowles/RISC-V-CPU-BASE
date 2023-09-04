@@ -47,12 +47,10 @@ processor_no_mem DUT( .regValues(regValues), .command(command), .clk(clk), .rese
 //drive input
 
 //clk 100MHZ or 10ns clk period
+always #5 clk = ~clk;
 initial
     begin
     clk = 1'b0;
-    forever begin
-        #5 clk = ~clk;
-    end
 end
 
 
