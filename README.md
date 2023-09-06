@@ -52,8 +52,10 @@ How to use this project:
         Creating a new RISC-V ISA extension with implementation
 
 How to Contribute:
+
     Feel free to fork this project and make a pull request with your changes.
 
 Credits:
+
     Marshall Knowles
     https://riscv.org/wp-content/uploads/2017/05/riscv-spec-v2.2.pdf
