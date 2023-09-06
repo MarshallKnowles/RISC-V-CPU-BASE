@@ -1,0 +1,29 @@
+This file is a placeholder for the RAM unit used in this project.
+It is replacing the RAM unit because I used a quartus IP block to instantiate the RAM and 
+as Altera/Intel IP does not follow the same license as my project I will not be including it here.
+
+I will however, provide the settings I used to create the block such that it may be 
+recreated by anyone regardless of IP usage.
+The following are the settings I used to set up the IP block:
+
+Device Family: MAX10
+Output bus width: 32 bits
+Memory Capacity: 32b x 256 words
+Memory Block Type: Auto -> M9K
+Max Block Depth: Auto -> >= 256 words
+Clocking Method: Single Clock
+Registered Ports: address, byteEn, dIn, wren
+CKE (clock enables): None
+byte enable for port A: Yes -> byte enable for dIn and memDout
+aclr (asynch clear for registered ports): No
+rden (read enable): No
+Single Port Read-During-Write Option: 
+	when being written to memDout = new data.
+	If bytes are masked X's are written to masked bits.
+	This setting is chosen for debugging purposes and can be safely changed to: don't care.
+Memory Initalization: None (memory is left as all 0s)
+In-System Memory Content Editor: Not allowed.
+
+
+
+
