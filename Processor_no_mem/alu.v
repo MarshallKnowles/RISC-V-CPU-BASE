@@ -1,8 +1,8 @@
 module alu  (
-    input signed [2:0] opSel,
+    input signed [2:0] op_Select,
     input signed [31:0] op1, 
     input signed [31:0] op2,
-    input alt_operator, branchMode,
+    input alt_operator, branch_mode,
     output reg signed [31:0] result
 );
 wire [31:0] op1_unsign, op2_unsign;
@@ -11,9 +11,9 @@ assign op2_unsign = op2;
 
 always @(*)
 begin
-    if(branchMode)
+    if(branch_mode)
     begin
-        case (opSel)
+        case (op_select)
         3'b000: result = (op1 == op2) ? 1'b1 : 1'b0;
         3'b001: result = (op1 != op2) ? 1'b1 : 1'b0;
         3'b100: result = (op1 < op2) ? 1'b1 : 1'b0;
@@ -27,7 +27,7 @@ begin
 
     else
     begin
-        case (opSel)
+        case (op_select)
             3'b000: begin
                 if(alt_operator == 1'b1)
                     result = op1 - op2; 

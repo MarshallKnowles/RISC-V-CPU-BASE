@@ -24,10 +24,10 @@ module RISC_V_Processor_V0(
 
     assign mux_dIn[32] = result_dOut;
     //registers
-    regn IR(.din(command), .clk(clk), .enable(IR_enable), .reset(reset), .dout(IR_out));
-    regn op1( .din(dIn), .clk(clk), .enable(op1_enable), .reset(reset), .dout(op1_dOut));
-    regn result( .din(result_dIn), .clk(clk), .reset(reset), .enable(result_enable) , .dout(result_dOut));
-    regn x0(.din(dIn), .clk(clk), .reset(reset), .enable(gpr_enable[0]), .dout(mux_dIn[0]));
+    regn IR(.data_in(command), .clk(clk), .enable(IR_enable), .reset(reset), .data_out(IR_out));
+    regn op1( .data_in(dIn), .clk(clk), .enable(op1_enable), .reset(reset), .data_out(op1_dOut));
+    regn result( .data_in(result_dIn), .clk(clk), .reset(reset), .enable(result_enable) , .data_out(result_dOut));
+    regn x0(.data_in(dIn), .clk(clk), .reset(reset), .enable(gpr_enable[0]), .data_out(mux_dIn[0]));
 
     //PC
     logic PC_enable;
@@ -47,13 +47,13 @@ module RISC_V_Processor_V0(
     genvar i1;
     generate 
         for(i1 = 1; i1<32; i1 = i1 +1 ) begin : RFileFor
-            regn x(.din(dIn), .clk(clk), .reset(reset), .enable(gpr_enable[i1]), .dout(mux_dIn[i1]));
+            regn x(.data_in(dIn), .clk(clk), .reset(reset), .enable(gpr_enable[i1]), .data_out(mux_dIn[i1]));
 
         end
     endgenerate
 
     //decoder
-    dec5to32 decoder(.dIn(rd), .dOut(rd_decoded));
+    dec5to32 decoder(.data_in(rd), .data_out(rd_decoded));
 
     //Load Store Unit:
     reg [31:0] addressIn;
@@ -73,7 +73,7 @@ module RISC_V_Processor_V0(
         end
 
     //ALU
-    alu ALU(.opSel(opSel), .op1(op1_dOut), .op2(dIn), .result(result_dIn) , .alt_operator(alt_operator), .branchMode(branchMode));
+    alu ALU(.op_select(opSel), .op1(op1_dOut), .op2(dIn), .result(result_dIn) , .alt_operator(alt_operator), .branch_mode(branchMode));
 
     //MUX (internal processor bus)
     assign mux_dIn[38] = {PC_dOut};
