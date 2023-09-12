@@ -53,10 +53,10 @@ module processor_no_mem(
     endgenerate
 
     //decoder
-    dec5to32 decoder(.dIn(rd), .dOut(rd_decoded));
+    dec5to32 decoder(.data_in(rd), .data_out(rd_decoded));
 
     //ALU
-    alu ALU(.opSel(opSel), .op1(op1_dOut), .op2(dIn), .result(result_dIn) , .alt_operator(alt_operator), .branchMode(branchMode));
+    alu ALU(.op_select(opSel), .op1(op1_dOut), .op2(dIn), .result(result_dIn) , .alt_operator(alt_operator), .branch_mode(branchMode));
 
     //MUX (internal processor bus)
     assign mux_dIn[38] = {PC_dOut};

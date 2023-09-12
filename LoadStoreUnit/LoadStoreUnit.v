@@ -7,7 +7,6 @@ module LoadStoreUnit (
 );
 
 //wires for the memory unit 
-wire [8:0] memAddress; //bc I'm using a smaller memory
 reg [3:0] byteEn; //enables bytes from the given address
 wire [31:0] memDOut;
 

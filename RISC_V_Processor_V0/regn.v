@@ -1,16 +1,16 @@
 module regn(
-	input signed [31:0] din,
+	input signed [31:0] data_in,
 	input clk, enable, reset,
-	output reg signed [31:0] dout
+	output reg signed [31:0] data_out
 	);
 	
 	//set and retrieve data
 	always @(posedge clk)
 	begin
 	    if(reset)
-		    dout <= 32'h0000;
+		    data_out <= 32'h0000;
 	    else if(enable)
-		    dout <= din;
+		    data_out <= data_in;
 	end
 	
 endmodule
